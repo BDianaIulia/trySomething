@@ -27,7 +27,8 @@ namespace WADProj
         {
             services.AddControllersWithViews();
 
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=TestEntityFrameworkDb;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = @"Server=(localdb)\mssqllocaldb;Initial Catalog = database; Integrated Security = SSPI; AttachDBFilename =| DataDirectory |\myDB.mdf";
+            //Data Source = (LocalDb)\v11.0; Initial Catalog = database; Integrated Security = SSPI; AttachDBFilename =| DataDirectory |\database.mdf
             services.AddDbContext<MovieContext>
                 (options => options.UseSqlServer(connection));
         }
